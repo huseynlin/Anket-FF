@@ -1,0 +1,36 @@
+# .editorconfig for Sosyal_anket project
+root = true
+
+[*]
+charset = utf-8
+end_of_line = crlf
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 4
+
+[*.cs]
+# C# specific
+dotnet_sort_system_directives_first = true
+csharp_new_line_before_open_brace = all
+csharp_indent_case_contents = true
+csharp_preserve_single_line_blocks = false
+
+# Naming: WinForms control prefixes used in this project
+dotnet_naming_rule.controls_should_have_prefix.severity = suggestion
+dotnet_naming_rule.controls_should_have_prefix.symbols = control_symbols
+dotnet_naming_rule.controls_should_have_prefix.style = control_prefix_style
+
+dotnet_naming_symbols.control_symbols.applicable_kinds = field
+dotnet_naming_symbols.control_symbols.applicable_accessibilities = *
+dotnet_naming_symbols.control_symbols.required_modifiers = none
+
+dotnet_naming_style.control_prefix_style.required_prefix = txt|cmb|btn|num|chk|r|lbl|dgv|tsl
+dotnet_naming_style.control_prefix_style.capitalization = pascal_case
+
+# Use expression-bodied members when concise
+csharp_style_expression_bodied_methods = when_on_single_line:suggestion
+
+# File header
+[*.{cs,Designer.cs}]
+charset = utf-8

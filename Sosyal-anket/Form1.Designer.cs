@@ -1,0 +1,409 @@
+using System;
+using System.Drawing;
+using System.Windows.Forms;
+
+namespace Sosyal_anket
+{
+    partial class Form1
+    {
+        private System.ComponentModel.IContainer components = null;
+
+        private Label lblHeader;
+        private Label lblName;
+        private TextBox txtName;
+        private Label lblAge;
+        private NumericUpDown numAge;
+        private Label lblGender;
+        private ComboBox cmbGender;
+        private Label lblEducation;
+        private ComboBox cmbEducation;
+        private CheckBox chkWorking;
+        private Label lblCity;
+        private ComboBox cmbCity;
+
+        private Label lblInternetHours;
+        private ComboBox cmbInternetHours;
+        private Label lblSocialActive;
+        private RadioButton rNoSocial;
+        private RadioButton rYesSocial;
+        private Label lblPlatform;
+        private ComboBox cmbPlatform;
+        private Label lblEgov;
+        private RadioButton rYesEgov;
+        private RadioButton rNoEgov;
+
+        private Button btnSave;
+        private Button btnShowResults;
+        private Button btnClear;
+        private ToolTip toolTip1;
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        private void InitializeComponent()
+        {
+            components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            lblHeader = new Label();
+            lblName = new Label();
+            txtName = new TextBox();
+            lblAge = new Label();
+            numAge = new NumericUpDown();
+            lblGender = new Label();
+            cmbGender = new ComboBox();
+            lblEducation = new Label();
+            cmbEducation = new ComboBox();
+            chkWorking = new CheckBox();
+            lblCity = new Label();
+            cmbCity = new ComboBox();
+            lblInternetHours = new Label();
+            cmbInternetHours = new ComboBox();
+            lblSocialActive = new Label();
+            rNoSocial = new RadioButton();
+            rYesSocial = new RadioButton();
+            lblPlatform = new Label();
+            cmbPlatform = new ComboBox();
+            lblEgov = new Label();
+            rYesEgov = new RadioButton();
+            rNoEgov = new RadioButton();
+            btnSave = new Button();
+            btnShowResults = new Button();
+            btnClear = new Button();
+            toolTip1 = new ToolTip(components);
+            groupBox1 = new GroupBox();
+            groupBox2 = new GroupBox();
+            tslStatus = new ToolStripStatusLabel();
+            statusStrip1 = new StatusStrip();
+            ((System.ComponentModel.ISupportInitialize)numAge).BeginInit();
+            groupBox1.SuspendLayout();
+            groupBox2.SuspendLayout();
+            statusStrip1.SuspendLayout();
+            SuspendLayout();
+            // 
+            // lblHeader
+            // 
+            lblHeader.Dock = DockStyle.Top;
+            lblHeader.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            lblHeader.Location = new Point(0, 0);
+            lblHeader.Name = "lblHeader";
+            lblHeader.Size = new Size(1168, 60);
+            lblHeader.TabIndex = 0;
+            lblHeader.Text = "📊 Sosial Anket və Sorğu Programı";
+            lblHeader.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // lblName
+            // 
+            lblName.Font = new Font("Segoe UI", 9F);
+            lblName.Location = new Point(24, 86);
+            lblName.Name = "lblName";
+            lblName.Size = new Size(80, 36);
+            lblName.TabIndex = 1;
+            lblName.Text = "Ad:";
+            // 
+            // txtName
+            // 
+            txtName.Location = new Point(110, 80);
+            txtName.Name = "txtName";
+            txtName.Size = new Size(260, 42);
+            txtName.TabIndex = 2;
+            toolTip1.SetToolTip(txtName, "Tam adınızı daxil edin");
+            // 
+            // lblAge
+            // 
+            lblAge.Font = new Font("Segoe UI", 9F);
+            lblAge.Location = new Point(24, 141);
+            lblAge.Name = "lblAge";
+            lblAge.Size = new Size(80, 32);
+            lblAge.TabIndex = 3;
+            lblAge.Text = "Yaş:";
+            // 
+            // numAge
+            // 
+            numAge.Location = new Point(110, 134);
+            numAge.Maximum = new decimal(new int[] { 120, 0, 0, 0 });
+            numAge.Name = "numAge";
+            numAge.Size = new Size(80, 42);
+            numAge.TabIndex = 4;
+            toolTip1.SetToolTip(numAge, "Yaşınızı seçin");
+            // 
+            // lblGender
+            // 
+            lblGender.Font = new Font("Segoe UI", 9F);
+            lblGender.Location = new Point(24, 195);
+            lblGender.Name = "lblGender";
+            lblGender.Size = new Size(80, 36);
+            lblGender.TabIndex = 5;
+            lblGender.Text = "Cinsiyt:";
+            // 
+            // cmbGender
+            // 
+            cmbGender.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbGender.Items.AddRange(new object[] { "Kişi", "Qadın", "Digər" });
+            cmbGender.Location = new Point(110, 187);
+            cmbGender.Name = "cmbGender";
+            cmbGender.Size = new Size(260, 44);
+            cmbGender.TabIndex = 6;
+            toolTip1.SetToolTip(cmbGender, "Cins seçin");
+            // 
+            // lblEducation
+            // 
+            lblEducation.Font = new Font("Segoe UI", 9F);
+            lblEducation.Location = new Point(24, 248);
+            lblEducation.Name = "lblEducation";
+            lblEducation.Size = new Size(80, 41);
+            lblEducation.TabIndex = 7;
+            lblEducation.Text = "Təhsil:";
+            // 
+            // cmbEducation
+            // 
+            cmbEducation.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbEducation.Items.AddRange(new object[] { "Orta", "Bakalavr", "Magistr", "Doktorant" });
+            cmbEducation.Location = new Point(110, 248);
+            cmbEducation.Name = "cmbEducation";
+            cmbEducation.Size = new Size(260, 44);
+            cmbEducation.TabIndex = 8;
+            toolTip1.SetToolTip(cmbEducation, "Təhsil səviyyənizi seçin");
+            // 
+            // chkWorking
+            // 
+            chkWorking.Location = new Point(120, 298);
+            chkWorking.Name = "chkWorking";
+            chkWorking.Size = new Size(120, 42);
+            chkWorking.TabIndex = 9;
+            chkWorking.Text = "İşləyir";
+            toolTip1.SetToolTip(chkWorking, "İşəyirsinizsə işarələyin");
+            // 
+            // lblCity
+            // 
+            lblCity.Font = new Font("Segoe UI", 9F);
+            lblCity.Location = new Point(24, 354);
+            lblCity.Name = "lblCity";
+            lblCity.Size = new Size(80, 44);
+            lblCity.TabIndex = 10;
+            lblCity.Text = "Şəhər:";
+            // 
+            // cmbCity
+            // 
+            cmbCity.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbCity.Items.AddRange(new object[] { "Bakı", "Abşeron", "İmişli", "Gəncə", "Sumqayıt", "Şəki", "Quba", "Qəbələ", "Lənkəran" });
+            cmbCity.Location = new Point(110, 354);
+            cmbCity.Name = "cmbCity";
+            cmbCity.Size = new Size(260, 44);
+            cmbCity.TabIndex = 11;
+            toolTip1.SetToolTip(cmbCity, "Yaşadığınız şəhəri seçin");
+            // 
+            // lblInternetHours
+            // 
+            lblInternetHours.Font = new Font("Segoe UI", 9F);
+            lblInternetHours.Location = new Point(511, 86);
+            lblInternetHours.Name = "lblInternetHours";
+            lblInternetHours.Size = new Size(324, 40);
+            lblInternetHours.TabIndex = 12;
+            lblInternetHours.Text = "Günlük internet saatı:";
+            // 
+            // cmbInternetHours
+            // 
+            cmbInternetHours.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbInternetHours.Items.AddRange(new object[] { "0-1", "1-3", "3-5", "5-7", "7+" });
+            cmbInternetHours.Location = new Point(841, 78);
+            cmbInternetHours.Name = "cmbInternetHours";
+            cmbInternetHours.Size = new Size(260, 44);
+            cmbInternetHours.TabIndex = 13;
+            toolTip1.SetToolTip(cmbInternetHours, "Gün ərzində sərf etdiyiniz internet saatını seçin");
+            // 
+            // lblSocialActive
+            // 
+            lblSocialActive.Font = new Font("Segoe UI", 9F);
+            lblSocialActive.Location = new Point(6, 28);
+            lblSocialActive.Name = "lblSocialActive";
+            lblSocialActive.Size = new Size(318, 39);
+            lblSocialActive.TabIndex = 14;
+            lblSocialActive.Text = "Sosial şəbəkələrdə aktivsiniz?";
+            // 
+            // rNoSocial
+            // 
+            rNoSocial.Location = new Point(462, 28);
+            rNoSocial.Name = "rNoSocial";
+            rNoSocial.Size = new Size(108, 39);
+            rNoSocial.TabIndex = 16;
+            rNoSocial.Text = "Xeyr";
+            toolTip1.SetToolTip(rNoSocial, "Sosial şəbəkələrdə aktiv olmayanlar");
+            // 
+            // rYesSocial
+            // 
+            rYesSocial.Location = new Point(330, 28);
+            rYesSocial.Name = "rYesSocial";
+            rYesSocial.Size = new Size(106, 39);
+            rYesSocial.TabIndex = 15;
+            rYesSocial.Text = "Bəli";
+            toolTip1.SetToolTip(rYesSocial, "Sosial şəbəkələrdə aktiv olanlar");
+            // 
+            // lblPlatform
+            // 
+            lblPlatform.Font = new Font("Segoe UI", 9F);
+            lblPlatform.Location = new Point(511, 245);
+            lblPlatform.Name = "lblPlatform";
+            lblPlatform.Size = new Size(324, 44);
+            lblPlatform.TabIndex = 17;
+            lblPlatform.Text = "Ən çox istifadə olunan platforma:";
+            // 
+            // cmbPlatform
+            // 
+            cmbPlatform.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbPlatform.Items.AddRange(new object[] { "Instagram", "TikTok", "Facebook", "YouTube" });
+            cmbPlatform.Location = new Point(841, 245);
+            cmbPlatform.Name = "cmbPlatform";
+            cmbPlatform.Size = new Size(260, 44);
+            cmbPlatform.TabIndex = 18;
+            toolTip1.SetToolTip(cmbPlatform, "Ən çox istifadə etdiyiniz platformanı seçin");
+            // 
+            // lblEgov
+            // 
+            lblEgov.Font = new Font("Segoe UI", 9F);
+            lblEgov.Location = new Point(10, 32);
+            lblEgov.Name = "lblEgov";
+            lblEgov.Size = new Size(294, 44);
+            lblEgov.TabIndex = 19;
+            lblEgov.Text = "eGov istifadə edirsiniz?";
+            // 
+            // rYesEgov
+            // 
+            rYesEgov.Location = new Point(330, 27);
+            rYesEgov.Name = "rYesEgov";
+            rYesEgov.Size = new Size(106, 40);
+            rYesEgov.TabIndex = 20;
+            rYesEgov.Text = "Bəli";
+            toolTip1.SetToolTip(rYesEgov, "eGov istifadə edənlər");
+            // 
+            // rNoEgov
+            // 
+            rNoEgov.Location = new Point(462, 27);
+            rNoEgov.Name = "rNoEgov";
+            rNoEgov.Size = new Size(108, 40);
+            rNoEgov.TabIndex = 21;
+            rNoEgov.Text = "Xeyr";
+            toolTip1.SetToolTip(rNoEgov, "eGov istifadə etməyənlər");
+            // 
+            // btnSave
+            // 
+            btnSave.Font = new Font("Segoe UI", 9F);
+            btnSave.Location = new Point(24, 486);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(260, 45);
+            btnSave.TabIndex = 22;
+            btnSave.Text = "Cavabı Yadda Saxla";
+            toolTip1.SetToolTip(btnSave, "Anket cavabını yadda saxla");
+            btnSave.Click += btnSave_Click;
+            // 
+            // btnShowResults
+            // 
+            btnShowResults.Font = new Font("Segoe UI", 9F);
+            btnShowResults.Location = new Point(335, 486);
+            btnShowResults.Name = "btnShowResults";
+            btnShowResults.Size = new Size(260, 45);
+            btnShowResults.TabIndex = 23;
+            btnShowResults.Text = "Nəticələri Göstər";
+            toolTip1.SetToolTip(btnShowResults, "Yadda saxlanmış nəticələri göstər");
+            btnShowResults.Click += btnShowResults_Click;
+            // 
+            // btnClear
+            // 
+            btnClear.Font = new Font("Segoe UI", 9F);
+            btnClear.Location = new Point(659, 486);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(260, 45);
+            btnClear.TabIndex = 24;
+            btnClear.Text = "Formu Təmizlə";
+            toolTip1.SetToolTip(btnClear, "Bütün sahələri sıfırla");
+            btnClear.Click += btnClear_Click;
+            // 
+            // groupBox1
+            // 
+            groupBox1.Controls.Add(lblSocialActive);
+            groupBox1.Controls.Add(rYesSocial);
+            groupBox1.Controls.Add(rNoSocial);
+            groupBox1.Location = new Point(511, 141);
+            groupBox1.Name = "groupBox1";
+            groupBox1.Size = new Size(590, 78);
+            groupBox1.TabIndex = 25;
+            groupBox1.TabStop = false;
+            // 
+            // groupBox2
+            // 
+            groupBox2.Controls.Add(lblEgov);
+            groupBox2.Controls.Add(rNoEgov);
+            groupBox2.Controls.Add(rYesEgov);
+            groupBox2.Location = new Point(511, 292);
+            groupBox2.Name = "groupBox2";
+            groupBox2.Size = new Size(590, 83);
+            groupBox2.TabIndex = 26;
+            groupBox2.TabStop = false;
+            // 
+            // tslStatus
+            // 
+            tslStatus.Name = "tslStatus";
+            tslStatus.Size = new Size(78, 37);
+            tslStatus.Text = "Hazır";
+            // 
+            // statusStrip1
+            // 
+            statusStrip1.ImageScalingSize = new Size(28, 28);
+            statusStrip1.Items.AddRange(new ToolStripItem[] { tslStatus });
+            statusStrip1.Location = new Point(0, 624);
+            statusStrip1.Name = "statusStrip1";
+            statusStrip1.Size = new Size(1168, 46);
+            statusStrip1.TabIndex = 27;
+            statusStrip1.Text = "statusStrip1";
+            // 
+            // Form1
+            // 
+            ClientSize = new Size(1168, 670);
+            Controls.Add(groupBox2);
+            Controls.Add(groupBox1);
+            Controls.Add(lblHeader);
+            Controls.Add(lblName);
+            Controls.Add(txtName);
+            Controls.Add(lblAge);
+            Controls.Add(numAge);
+            Controls.Add(lblGender);
+            Controls.Add(cmbGender);
+            Controls.Add(lblEducation);
+            Controls.Add(cmbEducation);
+            Controls.Add(chkWorking);
+            Controls.Add(lblCity);
+            Controls.Add(cmbCity);
+            Controls.Add(lblInternetHours);
+            Controls.Add(cmbInternetHours);
+            Controls.Add(lblPlatform);
+            Controls.Add(cmbPlatform);
+            Controls.Add(btnSave);
+            Controls.Add(btnShowResults);
+            Controls.Add(btnClear);
+            Controls.Add(statusStrip1);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            MaximizeBox = false;
+            Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Sosial Anket və Sorğu Programı";
+            Load += Form1_Load;
+            ((System.ComponentModel.ISupportInitialize)numAge).EndInit();
+            groupBox1.ResumeLayout(false);
+            groupBox2.ResumeLayout(false);
+            statusStrip1.ResumeLayout(false);
+            statusStrip1.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
+        }
+        private GroupBox groupBox1;
+        private GroupBox groupBox2;
+        private ToolStripStatusLabel tslStatus;
+        private StatusStrip statusStrip1;
+    }
+}

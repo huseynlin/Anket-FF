@@ -1,0 +1,68 @@
+﻿using System;
+using System.Windows.Forms;
+using System.Drawing;
+
+namespace Sosyal_anket
+{
+    partial class ResultsForm
+    {
+        private System.ComponentModel.IContainer components = null;
+
+        private DataGridView dgvResults;
+        private Button btnSaveCsv;
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        private void InitializeComponent()
+        {
+            dgvResults = new DataGridView();
+            btnSaveCsv = new Button();
+            ((System.ComponentModel.ISupportInitialize)dgvResults).BeginInit();
+            SuspendLayout();
+            // 
+            // dgvResults
+            // 
+            dgvResults.AllowUserToAddRows = false;
+            dgvResults.AllowUserToDeleteRows = false;
+            dgvResults.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgvResults.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvResults.ColumnHeadersHeight = 40;
+            dgvResults.Location = new Point(12, 12);
+            dgvResults.Name = "dgvResults";
+            dgvResults.ReadOnly = true;
+            dgvResults.RowHeadersWidth = 72;
+            dgvResults.Size = new Size(760, 380);
+            dgvResults.TabIndex = 0;
+            // 
+            // btnSaveCsv
+            // 
+            btnSaveCsv.Font = new Font("Segoe UI", 9F);
+            btnSaveCsv.Location = new Point(12, 400);
+            btnSaveCsv.Name = "btnSaveCsv";
+            btnSaveCsv.Size = new Size(160, 36);
+            btnSaveCsv.TabIndex = 1;
+            btnSaveCsv.Text = "CSV kimi yadda saxla";
+            btnSaveCsv.Click += btnSaveCsv_Click;
+            // 
+            // ResultsForm
+            // 
+            ClientSize = new Size(784, 467);
+            Controls.Add(dgvResults);
+            Controls.Add(btnSaveCsv);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            Name = "ResultsForm";
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "Nəticələr";
+            Load += ResultsForm_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvResults).EndInit();
+            ResumeLayout(false);
+        }
+    }
+}

@@ -1,0 +1,263 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Windows.Forms;
+
+namespace Sosyal_anket
+{
+    public partial class Form1 : Form
+    {
+        // Global results list in RAM
+        private readonly List<SurveyResult> results = new List<SurveyResult>();
+
+        public Form1()
+        {
+            InitializeComponent();
+            // InitializeDefaults is called on Form Load to ensure designer-created controls are ready.
+            this.Load += Form1_Load;
+        }
+
+        private void InitializeDefaults()
+        {
+            // NumericUpDown bounds (safety if designer didn't set them)
+            numAge.Minimum = 1;
+            numAge.Maximum = 120;
+
+            // Set default selections where sensible
+            SetDefaultSelection(cmbGender);
+            SetDefaultSelection(cmbEducation);
+            SetDefaultSelection(cmbCity);
+            SetDefaultSelection(cmbInternetHours);
+            SetDefaultSelection(cmbPlatform);
+
+            // StatusStrip safe update
+            tslStatus?.SetTextSafe("Hazır");
+
+            // Initial focus
+            txtName?.Focus();
+        }
+
+        private static void SetDefaultSelection(ComboBox combo)
+        {
+            if (combo == null)
+            {
+                return;
+            }
+
+            if (combo.Items.Count > 0)
+            {
+                combo.SelectedIndex = 0;
+            }
+            else
+            {
+                combo.SelectedIndex = -1;
+            }
+        }
+
+        private static string GetComboText(ComboBox combo)
+        {
+            if (combo == null)
+            {
+                return string.Empty;
+            }
+
+            // GetItemText returns empty string for null selected item — safe
+            return combo.GetItemText(combo.SelectedItem) ?? string.Empty;
+        }
+
+        private bool ValidateForm()
+        {
+            // Name
+            if (string.IsNullOrWhiteSpace(txtName?.Text))
+            {
+                MessageBox.Show("Ad sahəsi boş ola bilməz.", "Xəta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtName?.Focus();
+                return false;
+            }
+
+            // Combos
+            if (string.IsNullOrEmpty(GetComboText(cmbGender)))
+            {
+                MessageBox.Show("Cins seçin.", "Xəta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                cmbGender?.Focus();
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(GetComboText(cmbEducation)))
+            {
+                MessageBox.Show("Təhsil seçin.", "Xəta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                cmbEducation?.Focus();
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(GetComboText(cmbCity)))
+            {
+                MessageBox.Show("Şəhər seçin.", "Xəta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                cmbCity?.Focus();
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(GetComboText(cmbInternetHours)))
+            {
+                MessageBox.Show("İnternet saatını seçin.", "Xəta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                cmbInternetHours?.Focus();
+                return false;
+            }
+
+            if (string.IsNullOrEmpty(GetComboText(cmbPlatform)))
+            {
+                MessageBox.Show("Platforma seçin.", "Xəta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                cmbPlatform?.Focus();
+                return false;
+            }
+
+            // Radio groups validation
+            if (!(rYesSocial.Checked || rNoSocial.Checked))
+            {
+                MessageBox.Show("Sosial şəbəkə fəallığını seçin.", "Xəta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                rYesSocial?.Focus();
+                return false;
+            }
+
+            if (!(rYesEgov.Checked || rNoEgov.Checked))
+            {
+                MessageBox.Show("eGov istifadə vəziyyətini seçin.", "Xəta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                rYesEgov?.Focus();
+                return false;
+            }
+
+            // Age sanity (ensure within bounds)
+            if (numAge.Value < numAge.Minimum || numAge.Value > numAge.Maximum)
+            {
+                MessageBox.Show($"Yaş {numAge.Minimum} ilə {numAge.Maximum} arasında olmalıdır.", "Xəta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                numAge?.Focus();
+                return false;
+            }
+
+            return true;
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            if (!ValidateForm())
+            {
+                return;
+            }
+
+            // Build values safely
+            string name = txtName.Text.Trim();
+            int age = Convert.ToInt32(numAge.Value);
+            string gender = GetComboText(cmbGender);
+            string education = GetComboText(cmbEducation);
+            bool working = chkWorking.Checked;
+            string city = GetComboText(cmbCity);
+            string internetHours = GetComboText(cmbInternetHours);
+            string socialActive = rYesSocial.Checked ? "Bəli" : "Xeyr";
+            string favoritePlatform = GetComboText(cmbPlatform);
+            string egovUsage = rYesEgov.Checked ? "Bəli" : "Xeyr";
+
+            var item = new SurveyResult
+            {
+                Name = name,
+                Age = age,
+                Gender = gender,
+                Education = education,
+                Working = working,
+                City = city,
+                InternetHours = internetHours,
+                SocialMediaActive = socialActive,
+                FavoritePlatform = favoritePlatform,
+                EgovUsage = egovUsage
+            };
+
+            results.Add(item);
+
+            // UX: status, confirmation, then clear and focus
+            tslStatus?.SetTextSafe("Uğurla yadda saxlanıldı");
+            MessageBox.Show("Cavab uğurla yadda saxlanıldı.", "Məlumat", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            ClearForm();
+            txtName?.Focus();
+        }
+
+        private void btnShowResults_Click(object sender, EventArgs e)
+        {
+            if (results.Count == 0)
+            {
+                MessageBox.Show("Hələ yadda saxlanmış nəticə yoxdur.", "Məlumat", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                tslStatus?.SetTextSafe("Nəticə yoxdur");
+                return;
+            }
+
+            using var resultsForm = new ResultsForm(results);
+            resultsForm.ShowDialog(this);
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            ClearForm();
+            tslStatus?.SetTextSafe("Form sıfırlandı");
+            txtName?.Focus();
+        }
+
+        private void ClearForm()
+        {
+            txtName?.Clear();
+            // Reset numeric within allowed bounds
+            if (numAge.Value < numAge.Minimum)
+            {
+                numAge.Value = numAge.Minimum;
+            }
+            else if (numAge.Value > numAge.Maximum)
+            {
+                numAge.Value = numAge.Maximum;
+            }
+            else
+            {
+                numAge.Value = numAge.Minimum;
+            }
+
+            SetDefaultSelection(cmbGender);
+            SetDefaultSelection(cmbEducation);
+            chkWorking.Checked = false;
+            SetDefaultSelection(cmbCity);
+
+            SetDefaultSelection(cmbInternetHours);
+            rYesSocial.Checked = false;
+            rNoSocial.Checked = false;
+            SetDefaultSelection(cmbPlatform);
+            rYesEgov.Checked = false;
+            rNoEgov.Checked = false;
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // Move initialization here to ensure all designer controls are created.
+            InitializeDefaults();
+        }
+
+        private void Form1_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rNoEgov_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+    }
+
+    internal static class ToolStripExtensions
+    {
+        // Helper extension to safely set ToolStripStatusLabel text without null checks everywhere.
+        public static void SetTextSafe(this ToolStripStatusLabel? label, string text)
+        {
+            if (label is null)
+            {
+                return;
+            }
+
+            label.Text = text;
+        }
+    }
+}

@@ -1,0 +1,17 @@
+C:\Users\nural\Downloads\C# code\Sosyal-anket\bin\Debug\net8.0-windows\Sosyal-anket.exe
+C:\Users\nural\Downloads\C# code\Sosyal-anket\bin\Debug\net8.0-windows\Sosyal-anket.deps.json
+C:\Users\nural\Downloads\C# code\Sosyal-anket\bin\Debug\net8.0-windows\Sosyal-anket.runtimeconfig.json
+C:\Users\nural\Downloads\C# code\Sosyal-anket\bin\Debug\net8.0-windows\Sosyal-anket.dll
+C:\Users\nural\Downloads\C# code\Sosyal-anket\bin\Debug\net8.0-windows\Sosyal-anket.pdb
+C:\Users\nural\Downloads\C# code\Sosyal-anket\obj\Debug\net8.0-windows\Sosyal_anket.Form1.resources
+C:\Users\nural\Downloads\C# code\Sosyal-anket\obj\Debug\net8.0-windows\Sosyal-anket.csproj.GenerateResource.cache
+C:\Users\nural\Downloads\C# code\Sosyal-anket\obj\Debug\net8.0-windows\Sosyal-anket.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\nural\Downloads\C# code\Sosyal-anket\obj\Debug\net8.0-windows\Sosyal-anket.AssemblyInfoInputs.cache
+C:\Users\nural\Downloads\C# code\Sosyal-anket\obj\Debug\net8.0-windows\Sosyal-anket.AssemblyInfo.cs
+C:\Users\nural\Downloads\C# code\Sosyal-anket\obj\Debug\net8.0-windows\Sosyal-anket.csproj.CoreCompileInputs.cache
+C:\Users\nural\Downloads\C# code\Sosyal-anket\obj\Debug\net8.0-windows\Sosyal-anket.dll
+C:\Users\nural\Downloads\C# code\Sosyal-anket\obj\Debug\net8.0-windows\refint\Sosyal-anket.dll
+C:\Users\nural\Downloads\C# code\Sosyal-anket\obj\Debug\net8.0-windows\Sosyal-anket.pdb
+C:\Users\nural\Downloads\C# code\Sosyal-anket\obj\Debug\net8.0-windows\Sosyal-anket.genruntimeconfig.cache
+C:\Users\nural\Downloads\C# code\Sosyal-anket\obj\Debug\net8.0-windows\ref\Sosyal-anket.dll
+C:\Users\nural\Downloads\C# code\Sosyal-anket\obj\Debug\net8.0-windows\Sosyal_anket.ResultsForm.resources
