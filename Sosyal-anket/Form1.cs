@@ -21,7 +21,7 @@ namespace Sosyal_anket
         {
             // NumericUpDown bounds (safety if designer didn't set them)
             numAge.Minimum = 1;
-            numAge.Maximum = 120;
+            numAge.Maximum = 150;
 
             // Set default selections where sensible
             SetDefaultSelection(cmbGender);
@@ -114,14 +114,14 @@ namespace Sosyal_anket
             // Radio groups validation
             if (!(rYesSocial.Checked || rNoSocial.Checked))
             {
-                MessageBox.Show("Sosial şəbəkə fəallığını seçin.", "Xəta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Sosial şəbəkə aktivliyinizi seçin.", "Xəta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 rYesSocial?.Focus();
                 return false;
             }
 
             if (!(rYesEgov.Checked || rNoEgov.Checked))
             {
-                MessageBox.Show("eGov istifadə vəziyyətini seçin.", "Xəta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("MyGov istifadə vəziyyətini seçin.", "Xəta", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 rYesEgov?.Focus();
                 return false;
             }

@@ -139,7 +139,7 @@ namespace Sosyal_anket
             lblGender.Name = "lblGender";
             lblGender.Size = new Size(80, 36);
             lblGender.TabIndex = 5;
-            lblGender.Text = "Cinsiyt:";
+            lblGender.Text = "Cins:";
             // 
             // cmbGender
             // 
@@ -163,7 +163,7 @@ namespace Sosyal_anket
             // cmbEducation
             // 
             cmbEducation.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbEducation.Items.AddRange(new object[] { "Orta", "Bakalavr", "Magistr", "Doktorant" });
+            cmbEducation.Items.AddRange(new object[] { "Yoxdur", "Orta", "Bakalavr", "Magistr", "Doktorant" });
             cmbEducation.Location = new Point(110, 248);
             cmbEducation.Name = "cmbEducation";
             cmbEducation.Size = new Size(260, 44);
@@ -191,7 +191,7 @@ namespace Sosyal_anket
             // cmbCity
             // 
             cmbCity.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbCity.Items.AddRange(new object[] { "Bakı", "Abşeron", "İmişli", "Gəncə", "Sumqayıt", "Şəki", "Quba", "Qəbələ", "Lənkəran" });
+            cmbCity.Items.AddRange(new object[] { "Bakı", "Abşeron", "İmişli", "Gəncə", "Sumqayıt", "Şəki", "Quba", "Qəbələ", "Lənkəran", "Digər" });
             cmbCity.Location = new Point(110, 354);
             cmbCity.Name = "cmbCity";
             cmbCity.Size = new Size(260, 44);
@@ -256,7 +256,7 @@ namespace Sosyal_anket
             // cmbPlatform
             // 
             cmbPlatform.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbPlatform.Items.AddRange(new object[] { "Instagram", "TikTok", "Facebook", "YouTube" });
+            cmbPlatform.Items.AddRange(new object[] { "YouTube", "Instagram", "TikTok", "Facebook", "Digər" });
             cmbPlatform.Location = new Point(841, 245);
             cmbPlatform.Name = "cmbPlatform";
             cmbPlatform.Size = new Size(260, 44);
@@ -270,7 +270,7 @@ namespace Sosyal_anket
             lblEgov.Name = "lblEgov";
             lblEgov.Size = new Size(294, 44);
             lblEgov.TabIndex = 19;
-            lblEgov.Text = "eGov istifadə edirsiniz?";
+            lblEgov.Text = "MyGov istifadə edirsiniz?";
             // 
             // rYesEgov
             // 
