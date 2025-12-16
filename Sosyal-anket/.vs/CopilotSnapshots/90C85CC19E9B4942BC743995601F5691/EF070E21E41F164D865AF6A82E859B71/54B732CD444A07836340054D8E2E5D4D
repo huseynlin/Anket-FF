@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
@@ -11,20 +11,6 @@ namespace Sosyal_anket
     public partial class ResultsForm : Form
     {
         private readonly List<SurveyResult> results;
-
-        private class SurveyResultView
-        {
-            public string Name { get; set; } = string.Empty;
-            public int Age { get; set; }
-            public string Gender { get; set; } = string.Empty;
-            public string Education { get; set; } = string.Empty;
-            public string Working { get; set; } = string.Empty; // localized yes/no
-            public string City { get; set; } = string.Empty;
-            public string InternetHours { get; set; } = string.Empty;
-            public string SocialMediaActive { get; set; } = string.Empty;
-            public string FavoritePlatform { get; set; } = string.Empty;
-            public string EgovUsage { get; set; } = string.Empty;
-        }
 
         public ResultsForm(List<SurveyResult> results)
         {

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
@@ -12,20 +12,6 @@ namespace Sosyal_anket
     {
         private readonly List<SurveyResult> results;
 
-        private class SurveyResultView
-        {
-            public string Name { get; set; } = string.Empty;
-            public int Age { get; set; }
-            public string Gender { get; set; } = string.Empty;
-            public string Education { get; set; } = string.Empty;
-            public string Working { get; set; } = string.Empty; // localized yes/no
-            public string City { get; set; } = string.Empty;
-            public string InternetHours { get; set; } = string.Empty;
-            public string SocialMediaActive { get; set; } = string.Empty;
-            public string FavoritePlatform { get; set; } = string.Empty;
-            public string EgovUsage { get; set; } = string.Empty;
-        }
-
         public ResultsForm(List<SurveyResult> results)
         {
             InitializeComponent();
@@ -34,50 +20,9 @@ namespace Sosyal_anket
 
         private void ResultsForm_Load(object? sender, EventArgs e)
         {
-            // Create a read-only view model list to avoid formatting issues (convert bools to localized strings)
-            var viewList = results.Select(r => new SurveyResultView
-            {
-                Name = r.Name,
-                Age = r.Age,
-                Gender = r.Gender,
-                Education = r.Education,
-                Working = r.Working ? "Bəli" : "Xeyr",
-                City = r.City,
-                InternetHours = r.InternetHours,
-                SocialMediaActive = r.SocialMediaActive,
-                FavoritePlatform = r.FavoritePlatform,
-                EgovUsage = r.EgovUsage
-            }).ToList();
-
-            var binding = new BindingList<SurveyResultView>(viewList);
+            // Bind to a BindingList to show read-only snapshot
+            var binding = new BindingList<SurveyResult>(results);
             dgvResults.DataSource = binding;
-
-            // Localize column headers to Azerbaijani and set display order
-            var headers = new Dictionary<string, string>
-            {
-                [nameof(SurveyResultView.Name)] = "Ad",
-                [nameof(SurveyResultView.Age)] = "Yaş",
-                [nameof(SurveyResultView.Gender)] = "Cins",
-                [nameof(SurveyResultView.Education)] = "Təhsil",
-                [nameof(SurveyResultView.Working)] = "İşləyir",
-                [nameof(SurveyResultView.City)] = "Şəhər",
-                [nameof(SurveyResultView.InternetHours)] = "Günlük internet saatı",
-                [nameof(SurveyResultView.SocialMediaActive)] = "Sosial şəbəkə aktivliyi",
-                [nameof(SurveyResultView.FavoritePlatform)] = "Ən çox istifadə olunan platforma",
-                [nameof(SurveyResultView.EgovUsage)] = "eGov istifadə"
-            };
-
-            int displayIndex = 0;
-            foreach (var kvp in headers)
-            {
-                if (dgvResults.Columns.Contains(kvp.Key))
-                {
-                    var col = dgvResults.Columns[kvp.Key];
-                    col.HeaderText = kvp.Value;
-                    col.DisplayIndex = displayIndex++;
-                }
-            }
-
             tslInfo.Text = $"Cəmi nəticə: {results.Count}";
         }
 
