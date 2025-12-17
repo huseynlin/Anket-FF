@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows.Forms;
@@ -9,8 +9,6 @@ namespace Sosyal_anket
     {
         // Global results list in RAM
         private readonly List<SurveyResult> results = new List<SurveyResult>();
-        // Simple password for viewing results (change as needed)
-        private const string ResultsPassword = "admin123";
 
         public Form1()
         {
@@ -184,11 +182,16 @@ namespace Sosyal_anket
 
         private void btnShowResults_Click(object sender, EventArgs e)
         {
-            password.Clear();
-            btnSave.Enabled = false;
-            btnShowResults.Enabled = false;
-            btnClear.Enabled = false;
-            loginPanel.Visible = true;
+
+            if (results.Count == 0)
+            {
+                MessageBox.Show("Hələ yadda saxlanmış nəticə yoxdur.", "Məlumat", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                tslStatus?.SetTextSafe("Nəticə yoxdur");
+                return;
+            }
+
+            using var resultsForm = new ResultsForm(results);
+            resultsForm.ShowDialog(this);
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -234,39 +237,6 @@ namespace Sosyal_anket
             InitializeDefaults();
         }
 
-        private bool PromptForPassword()
-        {
-            using var dlg = new Form()
-            {
-                Text = "Nəticələrə giriş üçün şifrə",
-                FormBorderStyle = FormBorderStyle.FixedDialog,
-                StartPosition = FormStartPosition.CenterParent,
-                ClientSize = new System.Drawing.Size(360, 120),
-                MinimizeBox = false,
-                MaximizeBox = false
-            };
-
-            var lbl = new Label() { Left = 12, Top = 12, Width = 336, Text = "Zəhmət olmasa nəticələri görmək üçün şifrə daxil edin:" };
-            var txt = new TextBox() { Left = 12, Top = 36, Width = 336 }; txt.UseSystemPasswordChar = true;
-            var btnOk = new Button() { Text = "OK", Left = 188, Width = 80, Top = 72, DialogResult = DialogResult.OK };
-            var btnCancel = new Button() { Text = "Ləğv et", Left = 276, Width = 72, Top = 72, DialogResult = DialogResult.Cancel };
-
-            dlg.Controls.Add(lbl);
-            dlg.Controls.Add(txt);
-            dlg.Controls.Add(btnOk);
-            dlg.Controls.Add(btnCancel);
-            dlg.AcceptButton = btnOk;
-            dlg.CancelButton = btnCancel;
-
-            if (dlg.ShowDialog(this) != DialogResult.OK)
-            {
-                return false;
-            }
-
-            var entered = txt.Text ?? string.Empty;
-            return string.Equals(entered, ResultsPassword, StringComparison.Ordinal);
-        }
-
         private void Form1_Load_1(object sender, EventArgs e)
         {
 
@@ -275,38 +245,6 @@ namespace Sosyal_anket
         private void rNoEgov_CheckedChanged(object sender, EventArgs e)
         {
 
-        }
-
-        private void back_Click(object sender, EventArgs e)
-        {
-            loginPanel.Visible = false;
-            btnSave.Enabled = true;
-            btnShowResults.Enabled = true;
-            btnClear.Enabled = true;
-        }
-
-        private void next_Click(object sender, EventArgs e)
-        {
-            if (password.Text == "@dmin12345")
-            {
-                loginPanel.Visible = false;
-                btnSave.Enabled = true;
-                btnShowResults.Enabled = true;
-                btnClear.Enabled = true;
-                if (results.Count == 0)
-                {
-                    MessageBox.Show("Hələ yadda saxlanmış nəticə yoxdur.", "Məlumat", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    tslStatus?.SetTextSafe("Nəticə yoxdur");
-                    return;
-                }
-                using var resultsForm = new ResultsForm(results);
-                resultsForm.ShowDialog(this);
-            }
-            else
-            {
-                MessageBox.Show("Yanlış şifrə daxil etdiniz.", "Xəta", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
         }
     }
 

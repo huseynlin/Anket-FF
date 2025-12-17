@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows.Forms;
@@ -184,11 +184,19 @@ namespace Sosyal_anket
 
         private void btnShowResults_Click(object sender, EventArgs e)
         {
-            password.Clear();
-            btnSave.Enabled = false;
-            btnShowResults.Enabled = false;
-            btnClear.Enabled = false;
-            loginPanel.Visible = true;
+            if (!PromptForPassword())
+            {
+                tslStatus?.SetTextSafe("Nəticələrə giriş rədd edildi");
+                return;
+            }
+            if (results.Count == 0)
+            {
+                MessageBox.Show("Hələ yadda saxlanmış nəticə yoxdur.", "Məlumat", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                tslStatus?.SetTextSafe("Nəticə yoxdur");
+                return;
+            }
+            using var resultsForm = new ResultsForm(results);
+            resultsForm.ShowDialog(this);
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -264,7 +272,15 @@ namespace Sosyal_anket
             }
 
             var entered = txt.Text ?? string.Empty;
-            return string.Equals(entered, ResultsPassword, StringComparison.Ordinal);
+            bool ok = string.Equals(entered, ResultsPassword, StringComparison.Ordinal);
+            if (ok)
+            {
+                // show panel and write the password (as user requested)
+                panelAuth.Visible = true;
+                txtPasswordDisplay.Text = entered;
+            }
+
+            return ok;
         }
 
         private void Form1_Load_1(object sender, EventArgs e)
@@ -275,38 +291,6 @@ namespace Sosyal_anket
         private void rNoEgov_CheckedChanged(object sender, EventArgs e)
         {
 
-        }
-
-        private void back_Click(object sender, EventArgs e)
-        {
-            loginPanel.Visible = false;
-            btnSave.Enabled = true;
-            btnShowResults.Enabled = true;
-            btnClear.Enabled = true;
-        }
-
-        private void next_Click(object sender, EventArgs e)
-        {
-            if (password.Text == "@dmin12345")
-            {
-                loginPanel.Visible = false;
-                btnSave.Enabled = true;
-                btnShowResults.Enabled = true;
-                btnClear.Enabled = true;
-                if (results.Count == 0)
-                {
-                    MessageBox.Show("Hələ yadda saxlanmış nəticə yoxdur.", "Məlumat", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    tslStatus?.SetTextSafe("Nəticə yoxdur");
-                    return;
-                }
-                using var resultsForm = new ResultsForm(results);
-                resultsForm.ShowDialog(this);
-            }
-            else
-            {
-                MessageBox.Show("Yanlış şifrə daxil etdiniz.", "Xəta", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
         }
     }
 

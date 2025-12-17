@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -36,6 +36,10 @@ namespace Sosyal_anket
         private Button btnShowResults;
         private Button btnClear;
         private ToolTip toolTip1;
+        private Panel panelAuth;
+        private Label lblAuthInfo;
+        private Label lblPasswordLabel;
+        private TextBox txtPasswordDisplay;
 
         protected override void Dispose(bool disposing)
         {
@@ -80,16 +84,10 @@ namespace Sosyal_anket
             groupBox2 = new GroupBox();
             tslStatus = new ToolStripStatusLabel();
             statusStrip1 = new StatusStrip();
-            loginPanel = new Panel();
-            back = new Button();
-            next = new Button();
-            password = new TextBox();
-            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)numAge).BeginInit();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             statusStrip1.SuspendLayout();
-            loginPanel.SuspendLayout();
             SuspendLayout();
             // 
             // lblHeader
@@ -351,6 +349,40 @@ namespace Sosyal_anket
             groupBox2.TabIndex = 26;
             groupBox2.TabStop = false;
             // 
+            // panelAuth
+            // 
+            panelAuth.Location = new Point(24, 560);
+            panelAuth.Name = "panelAuth";
+            panelAuth.Size = new Size(1080, 72);
+            panelAuth.TabIndex = 28;
+            panelAuth.Visible = false;
+            panelAuth.BorderStyle = BorderStyle.FixedSingle;
+            // 
+            // lblAuthInfo
+            // 
+            lblAuthInfo.Location = new Point(12, 12);
+            lblAuthInfo.Name = "lblAuthInfo";
+            lblAuthInfo.Size = new Size(300, 24);
+            lblAuthInfo.Text = "Giriş uğurlu oldu. Şifrə aşağıda göstərilir:";
+            // 
+            // lblPasswordLabel
+            // 
+            lblPasswordLabel.Location = new Point(12, 36);
+            lblPasswordLabel.Name = "lblPasswordLabel";
+            lblPasswordLabel.Size = new Size(80, 24);
+            lblPasswordLabel.Text = "Şifrə:";
+            // 
+            // txtPasswordDisplay
+            // 
+            txtPasswordDisplay.Location = new Point(96, 36);
+            txtPasswordDisplay.Name = "txtPasswordDisplay";
+            txtPasswordDisplay.ReadOnly = true;
+            txtPasswordDisplay.Size = new Size(300, 24);
+            toolTip1.SetToolTip(txtPasswordDisplay, "Daxil etdiyiniz şifrə burada göstərilir");
+            panelAuth.Controls.Add(lblAuthInfo);
+            panelAuth.Controls.Add(lblPasswordLabel);
+            panelAuth.Controls.Add(txtPasswordDisplay);
+            // 
             // tslStatus
             // 
             tslStatus.Name = "tslStatus";
@@ -367,69 +399,9 @@ namespace Sosyal_anket
             statusStrip1.TabIndex = 27;
             statusStrip1.Text = "statusStrip1";
             // 
-            // loginPanel
-            // 
-            loginPanel.BackColor = SystemColors.ActiveCaption;
-            loginPanel.Controls.Add(back);
-            loginPanel.Controls.Add(next);
-            loginPanel.Controls.Add(password);
-            loginPanel.Controls.Add(label1);
-            loginPanel.Location = new Point(335, 237);
-            loginPanel.Name = "loginPanel";
-            loginPanel.Size = new Size(441, 175);
-            loginPanel.TabIndex = 28;
-            loginPanel.Visible = false;
-            // 
-            // back
-            // 
-            back.BackColor = Color.FromArgb(255, 128, 128);
-            back.Cursor = Cursors.Hand;
-            back.FlatStyle = FlatStyle.Popup;
-            back.ForeColor = Color.Black;
-            back.Location = new Point(21, 107);
-            back.Name = "back";
-            back.Size = new Size(131, 54);
-            back.TabIndex = 4;
-            back.Text = "Geri";
-            back.UseVisualStyleBackColor = false;
-            back.Click += back_Click;
-            // 
-            // next
-            // 
-            next.BackColor = Color.FromArgb(128, 255, 128);
-            next.Cursor = Cursors.Hand;
-            next.FlatStyle = FlatStyle.Popup;
-            next.ForeColor = Color.Black;
-            next.Location = new Point(285, 107);
-            next.Name = "next";
-            next.Size = new Size(131, 54);
-            next.TabIndex = 3;
-            next.Text = "İrəli";
-            next.UseVisualStyleBackColor = false;
-            next.Click += next_Click;
-            // 
-            // password
-            // 
-            password.Location = new Point(224, 34);
-            password.Name = "password";
-            password.PasswordChar = '*';
-            password.Size = new Size(192, 42);
-            password.TabIndex = 1;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.ForeColor = Color.Black;
-            label1.Location = new Point(21, 34);
-            label1.Name = "label1";
-            label1.Size = new Size(197, 37);
-            label1.TabIndex = 0;
-            label1.Text = "Şifrə daxil edin:";
-            // 
             // Form1
             // 
             ClientSize = new Size(1168, 670);
-            Controls.Add(loginPanel);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(lblHeader);
@@ -452,6 +424,7 @@ namespace Sosyal_anket
             Controls.Add(btnShowResults);
             Controls.Add(btnClear);
             Controls.Add(statusStrip1);
+            Controls.Add(panelAuth);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
@@ -464,8 +437,6 @@ namespace Sosyal_anket
             groupBox2.ResumeLayout(false);
             statusStrip1.ResumeLayout(false);
             statusStrip1.PerformLayout();
-            loginPanel.ResumeLayout(false);
-            loginPanel.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -473,10 +444,5 @@ namespace Sosyal_anket
         private GroupBox groupBox2;
         private ToolStripStatusLabel tslStatus;
         private StatusStrip statusStrip1;
-        private Panel loginPanel;
-        private Button back;
-        private Button next;
-        private TextBox password;
-        private Label label1;
     }
 }

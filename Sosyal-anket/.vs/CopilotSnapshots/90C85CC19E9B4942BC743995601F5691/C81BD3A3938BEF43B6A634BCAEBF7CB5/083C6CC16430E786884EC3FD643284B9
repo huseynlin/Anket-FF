@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -36,6 +36,8 @@ namespace Sosyal_anket
         private Button btnShowResults;
         private Button btnClear;
         private ToolTip toolTip1;
+        private Button btnAuthBack;
+        private Button btnAuthNext;
 
         protected override void Dispose(bool disposing)
         {
@@ -80,16 +82,10 @@ namespace Sosyal_anket
             groupBox2 = new GroupBox();
             tslStatus = new ToolStripStatusLabel();
             statusStrip1 = new StatusStrip();
-            loginPanel = new Panel();
-            back = new Button();
-            next = new Button();
-            password = new TextBox();
-            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)numAge).BeginInit();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             statusStrip1.SuspendLayout();
-            loginPanel.SuspendLayout();
             SuspendLayout();
             // 
             // lblHeader
@@ -367,69 +363,9 @@ namespace Sosyal_anket
             statusStrip1.TabIndex = 27;
             statusStrip1.Text = "statusStrip1";
             // 
-            // loginPanel
-            // 
-            loginPanel.BackColor = SystemColors.ActiveCaption;
-            loginPanel.Controls.Add(back);
-            loginPanel.Controls.Add(next);
-            loginPanel.Controls.Add(password);
-            loginPanel.Controls.Add(label1);
-            loginPanel.Location = new Point(335, 237);
-            loginPanel.Name = "loginPanel";
-            loginPanel.Size = new Size(441, 175);
-            loginPanel.TabIndex = 28;
-            loginPanel.Visible = false;
-            // 
-            // back
-            // 
-            back.BackColor = Color.FromArgb(255, 128, 128);
-            back.Cursor = Cursors.Hand;
-            back.FlatStyle = FlatStyle.Popup;
-            back.ForeColor = Color.Black;
-            back.Location = new Point(21, 107);
-            back.Name = "back";
-            back.Size = new Size(131, 54);
-            back.TabIndex = 4;
-            back.Text = "Geri";
-            back.UseVisualStyleBackColor = false;
-            back.Click += back_Click;
-            // 
-            // next
-            // 
-            next.BackColor = Color.FromArgb(128, 255, 128);
-            next.Cursor = Cursors.Hand;
-            next.FlatStyle = FlatStyle.Popup;
-            next.ForeColor = Color.Black;
-            next.Location = new Point(285, 107);
-            next.Name = "next";
-            next.Size = new Size(131, 54);
-            next.TabIndex = 3;
-            next.Text = "İrəli";
-            next.UseVisualStyleBackColor = false;
-            next.Click += next_Click;
-            // 
-            // password
-            // 
-            password.Location = new Point(224, 34);
-            password.Name = "password";
-            password.PasswordChar = '*';
-            password.Size = new Size(192, 42);
-            password.TabIndex = 1;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.ForeColor = Color.Black;
-            label1.Location = new Point(21, 34);
-            label1.Name = "label1";
-            label1.Size = new Size(197, 37);
-            label1.TabIndex = 0;
-            label1.Text = "Şifrə daxil edin:";
-            // 
             // Form1
             // 
             ClientSize = new Size(1168, 670);
-            Controls.Add(loginPanel);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
             Controls.Add(lblHeader);
@@ -464,8 +400,6 @@ namespace Sosyal_anket
             groupBox2.ResumeLayout(false);
             statusStrip1.ResumeLayout(false);
             statusStrip1.PerformLayout();
-            loginPanel.ResumeLayout(false);
-            loginPanel.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -473,10 +407,11 @@ namespace Sosyal_anket
         private GroupBox groupBox2;
         private ToolStripStatusLabel tslStatus;
         private StatusStrip statusStrip1;
-        private Panel loginPanel;
-        private Button back;
-        private Button next;
-        private TextBox password;
-        private Label label1;
+        private Panel panelAuth;
+        private Label lblAuthInfo;
+        private Label lblPasswordLabel;
+        private TextBox txtPasswordDisplay;
+        private Button btnAuthBack;
+        private Button btnAuthNext;
     }
 }

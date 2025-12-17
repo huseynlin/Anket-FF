@@ -18,7 +18,7 @@ namespace Sosyal_anket
             public int Age { get; set; }
             public string Gender { get; set; } = string.Empty;
             public string Education { get; set; } = string.Empty;
-            public string Working { get; set; } = string.Empty; // localized yes/no
+            public string Working { get; set; } = string.Empty;
             public string City { get; set; } = string.Empty;
             public string InternetHours { get; set; } = string.Empty;
             public string SocialMediaActive { get; set; } = string.Empty;
@@ -34,7 +34,6 @@ namespace Sosyal_anket
 
         private void ResultsForm_Load(object? sender, EventArgs e)
         {
-            // Create a read-only view model list to avoid formatting issues (convert bools to localized strings)
             var viewList = results.Select(r => new SurveyResultView
             {
                 Name = r.Name,
@@ -51,8 +50,6 @@ namespace Sosyal_anket
 
             var binding = new BindingList<SurveyResultView>(viewList);
             dgvResults.DataSource = binding;
-
-            // Localize column headers to Azerbaijani and set display order
             var headers = new Dictionary<string, string>
             {
                 [nameof(SurveyResultView.Name)] = "Ad",
@@ -129,7 +126,6 @@ namespace Sosyal_anket
         private static string EscapeCsv(string? value)
         {
             if (string.IsNullOrEmpty(value)) return string.Empty;
-            // Simple escape for semicolon-containing fields: wrap in quotes and double quotes inside
             if (value.Contains(";") || value.Contains("\"") || value.Contains("\n") || value.Contains("\r"))
             {
                 return $"\"{value.Replace("\"", "\"\"")}\"";

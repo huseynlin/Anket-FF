@@ -7,28 +7,8 @@
       "RelativeMoniker": "D:0:0:{D3925279-670F-4AD6-ABB2-4806B99A028E}|Sosyal-anket.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D3925279-670F-4AD6-ABB2-4806B99A028E}|Sosyal-anket.csproj|c:\\users\\nural\\downloads\\c# code\\sosyal-anket\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D3925279-670F-4AD6-ABB2-4806B99A028E}|Sosyal-anket.csproj|solutionrelative:form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D3925279-670F-4AD6-ABB2-4806B99A028E}|Sosyal-anket.csproj|C:\\Users\\nural\\Downloads\\C# code\\Sosyal-anket\\resultsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{D3925279-670F-4AD6-ABB2-4806B99A028E}|Sosyal-anket.csproj|solutionrelative:resultsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D3925279-670F-4AD6-ABB2-4806B99A028E}|Sosyal-anket.csproj|c:\\users\\nural\\downloads\\c# code\\sosyal-anket\\resultsform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D3925279-670F-4AD6-ABB2-4806B99A028E}|Sosyal-anket.csproj|solutionrelative:resultsform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D3925279-670F-4AD6-ABB2-4806B99A028E}|Sosyal-anket.csproj|c:\\users\\nural\\downloads\\c# code\\sosyal-anket\\resultsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D3925279-670F-4AD6-ABB2-4806B99A028E}|Sosyal-anket.csproj|solutionrelative:resultsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D3925279-670F-4AD6-ABB2-4806B99A028E}|Sosyal-anket.csproj|c:\\users\\nural\\downloads\\c# code\\sosyal-anket\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D3925279-670F-4AD6-ABB2-4806B99A028E}|Sosyal-anket.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D3925279-670F-4AD6-ABB2-4806B99A028E}|Sosyal-anket.csproj|c:\\users\\nural\\downloads\\c# code\\sosyal-anket\\surveyresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D3925279-670F-4AD6-ABB2-4806B99A028E}|Sosyal-anket.csproj|solutionrelative:surveyresult.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,67 +18,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ResultsForm.cs [Tasar\u0131m]",
-              "DocumentMoniker": "C:\\Users\\nural\\Downloads\\C# code\\Sosyal-anket\\ResultsForm.cs",
-              "RelativeDocumentMoniker": "ResultsForm.cs",
-              "ToolTip": "C:\\Users\\nural\\Downloads\\C# code\\Sosyal-anket\\ResultsForm.cs [Tasar\u0131m]",
-              "RelativeToolTip": "ResultsForm.cs [Tasar\u0131m]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-15T12:25:00.207Z",
-              "EditorCaption": " [Tasar\u0131m]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ResultsForm.cs",
-              "DocumentMoniker": "C:\\Users\\nural\\Downloads\\C# code\\Sosyal-anket\\ResultsForm.cs",
-              "RelativeDocumentMoniker": "ResultsForm.cs",
-              "ToolTip": "C:\\Users\\nural\\Downloads\\C# code\\Sosyal-anket\\ResultsForm.cs",
-              "RelativeToolTip": "ResultsForm.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAEBQwF8AAABCAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-12T20:50:22.344Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ResultsForm.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\nural\\Downloads\\C# code\\Sosyal-anket\\ResultsForm.Designer.cs",
-              "RelativeDocumentMoniker": "ResultsForm.Designer.cs",
-              "ToolTip": "C:\\Users\\nural\\Downloads\\C# code\\Sosyal-anket\\ResultsForm.Designer.cs",
-              "RelativeToolTip": "ResultsForm.Designer.cs",
-              "ViewState": "AgIAAFEAAAAAAAAAAAAiwF4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-12T20:50:11.166Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "SurveyResult.cs",
-              "DocumentMoniker": "C:\\Users\\nural\\Downloads\\C# code\\Sosyal-anket\\SurveyResult.cs",
-              "RelativeDocumentMoniker": "SurveyResult.cs",
-              "ToolTip": "C:\\Users\\nural\\Downloads\\C# code\\Sosyal-anket\\SurveyResult.cs",
-              "RelativeToolTip": "SurveyResult.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-12T20:50:01.337Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 1,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\nural\\Downloads\\C# code\\Sosyal-anket\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
               "ToolTip": "C:\\Users\\nural\\Downloads\\C# code\\Sosyal-anket\\Form1.cs",
               "RelativeToolTip": "Form1.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAfAAAAAAAAAA==",
+              "ViewState": "AgIAAKkAAAAAAAAAAAAIwLoAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-12T20:48:26.972Z",
               "EditorCaption": ""
@@ -114,19 +44,6 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-12-12T20:48:22.37Z",
               "EditorCaption": " [Tasar\u0131m]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Form1.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\nural\\Downloads\\C# code\\Sosyal-anket\\Form1.Designer.cs",
-              "RelativeDocumentMoniker": "Form1.Designer.cs",
-              "ToolTip": "C:\\Users\\nural\\Downloads\\C# code\\Sosyal-anket\\Form1.Designer.cs",
-              "RelativeToolTip": "Form1.Designer.cs",
-              "ViewState": "AgIAAAYBAAAAAAAAAAD4vxoBAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-12T20:46:19.775Z",
-              "EditorCaption": ""
             }
           ]
         }

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows.Forms;
@@ -184,11 +184,21 @@ namespace Sosyal_anket
 
         private void btnShowResults_Click(object sender, EventArgs e)
         {
-            password.Clear();
-            btnSave.Enabled = false;
-            btnShowResults.Enabled = false;
-            btnClear.Enabled = false;
-            loginPanel.Visible = true;
+            if (results.Count == 0)
+            {
+                MessageBox.Show("Hələ yadda saxlanmış nəticə yoxdur.", "Məlumat", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                tslStatus?.SetTextSafe("Nəticə yoxdur");
+                return;
+            }
+
+            // show authentication panel for password entry
+            if (panelAuth != null)
+            {
+                txtPasswordDisplay.Text = string.Empty;
+                panelAuth.Visible = true;
+                txtPasswordDisplay.Focus();
+            }
+            tslStatus?.SetTextSafe("Şifrə tələb olunur");
         }
 
         private void btnClear_Click(object sender, EventArgs e)
@@ -275,38 +285,6 @@ namespace Sosyal_anket
         private void rNoEgov_CheckedChanged(object sender, EventArgs e)
         {
 
-        }
-
-        private void back_Click(object sender, EventArgs e)
-        {
-            loginPanel.Visible = false;
-            btnSave.Enabled = true;
-            btnShowResults.Enabled = true;
-            btnClear.Enabled = true;
-        }
-
-        private void next_Click(object sender, EventArgs e)
-        {
-            if (password.Text == "@dmin12345")
-            {
-                loginPanel.Visible = false;
-                btnSave.Enabled = true;
-                btnShowResults.Enabled = true;
-                btnClear.Enabled = true;
-                if (results.Count == 0)
-                {
-                    MessageBox.Show("Hələ yadda saxlanmış nəticə yoxdur.", "Məlumat", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    tslStatus?.SetTextSafe("Nəticə yoxdur");
-                    return;
-                }
-                using var resultsForm = new ResultsForm(results);
-                resultsForm.ShowDialog(this);
-            }
-            else
-            {
-                MessageBox.Show("Yanlış şifrə daxil etdiniz.", "Xəta", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
         }
     }
 
